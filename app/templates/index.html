@@ -100,69 +100,22 @@
 
 
 
-            <!-- Sales Chart Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    <div class="col-sm-12 col-xl-12">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Active Stocks</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            {% block Left_Plot %}
 
-                                {% autoescape off %}
-                                    {{ plot_div_left }}
-                                {% endautoescape %}
-
-                            {% endblock Left_Plot %}
-                        </div>
+                    <!-- LEFT: GLOBAL ETFs CANDLES (2/3 of Column Space) -->
+                    <div class="col-xl-8 col-lg-8 col-md-12">
+                        {% include 'Index_Page/Global_ETFs.html' %}
                     </div>
+                    <!-- End of Left: Global ETFs Candles-->
+
+                    <!-- RIGHT: MARKET MOVERS (1/3 of Column Space) -->
+                    <div class="col-xl-4 col-lg-4 col-md-12">
+                        {% include 'Index_Page/Market_Movers.html' %}"
+                    <!-- End of Right: Market Movers -->
+
                 </div>
-            </div>
-            <!-- Sales Chart End -->
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Stocks</h6>
-                        <a href="https://finance.yahoo.com/trending-tickers">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col">Ticker</th>
-                                    <th scope="col">Open</th>
-                                    <th scope="col">High</th>
-                                    <th scope="col">Low</th>
-                                    <th scope="col">Close</th>
-                                    <th scope="col">Adj. Close</th>
-                                    <th scope="col">Volume</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% if recent_stocks %}
-                                {% for i in recent_stocks %}
-                                <tr>
-                                    <td>{{i.Ticker}}</td>
-                                    <td>{{i.Open}}</td>
-                                    <td>{{i.High}}</td>
-                                    <td>{{i.Low}}</td>
-                                    <td>{{i.Close}}</td>
-                                    <td>{{i.Adj_Close}}</td>
-                                    <td>{{i.Volume}}</td>
-                                </tr>
-                                {% endfor %}
-                                {% endif %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
+            </div>"
 
 
             <!-- Footer Start -->
