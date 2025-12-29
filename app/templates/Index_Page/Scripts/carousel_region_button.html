@@ -1,36 +1,44 @@
 <script>
     const carousel = document.getElementById('etfCarousel');
+    if (!carousel) return;
+
     const carouselInstance = new bootstrap.Carousel(carousel, { interval: false });
-
     const regionButtons = document.querySelectorAll('[data-bs-slide-to]');
-    let current = 0;
 
-    function updateActiveButton(index) {
+    function setActiveButton(index) {
         regionButtons.forEach(btn => btn.classList.remove('active'));
-        regionButtons[index].classList.add('active');
-        current = index;
+        if (regionButtons[index]) {
+            regionButtons[index].classList.add('active');
+        }
     }
 
-    // Update active button when carousel slides
-    carousel.addEventListener('slid.bs.carousel', function (e) {
-        current = e.to;  // e.to is the new index
-        updateActiveButton(current);
-    });
+    // Make US active on page load
+    setActiveButton(0);
 
-    // Left Arrow
-    document.getElementById('prev-region').addEventListener('click', () => {
-        const prev = (current - 1 + regionButtons.length) % regionButtons.length;
-        carouselInstance.to(prev);
-    });
-
-    // Right Arrow
-    document.getElementById('next-region').addEventListener('click', () => {
-        const next = (current + 1) % regionButtons.length;
-        carouselInstance.to(next);
-    });
-
-    // Update active button on direct button click
+    // Handle region button clicks
     regionButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => updateActiveButton(index));
+        btn.addEventListener('click', () => {
+            carouselInstance.to(index); // move carousel
+            setActiveButton(index);     // update button state
+        });
+    });
+
+    // Handle left/right arrow navigation
+    document.getElementById('prev-region').addEventListener('click', () => {
+        const currentIndex = Array.from(regionButtons).findIndex(btn => btn.classList.contains('active'));
+        const prev = (currentIndex - 1 + regionButtons.length) % regionButtons.length;
+        carouselInstance.to(prev);
+        setActiveButton(prev);
+    });
+
+    document.getElementById('next-region').addEventListener('click', () => {
+        const currentIndex = Array.from(regionButtons).findIndex(btn => btn.classList.contains('active'));
+        const next = (currentIndex + 1) % regionButtons.length;
+        carouselInstance.to(next);
+        setActiveButton(next);
     });
 </script>
+
+
+
+

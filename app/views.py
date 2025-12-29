@@ -12,8 +12,9 @@ def index(request):
     # Download ETF data
     data_etf = yf.download(
         # passes the ticker
-        tickers=['SPY', 'QQQ', 'DIA', 'IWM', 'VTI', 'VXX',          # <- US ETFs
-                'FEZ', 'IEUR', 'EWG', 'EWQ', 'EWU', 'EWL'],        # <- European ETFs
+        tickers=['SPY', 'QQQ', 'DIA', 'IWM', 'VTI', 'VXX',              # <- US ETFs
+                'FEZ', 'IEUR', 'EWG', 'EWQ', 'EWU', 'EWL',              # <- European ETFs
+                'EWJ', 'MCHI', 'FXI', 'INDA', 'EEMA', 'AAXJ'],          # <- Asian ETFs
         group_by = 'ticker',
         threads=True, # Set thread value to true
         # used for access data[ticker]
@@ -48,7 +49,8 @@ def index(request):
 
     ETF_REGIONS = {
         "US": ['SPY','QQQ','DIA','IWM','VTI','VXX'],
-        "EUROPE": ['FEZ','IEUR','EWG','EWQ','EWU','EWL']
+        "EUROPE": ['FEZ','IEUR','EWG','EWQ','EWU','EWL'],
+        "ASIA": ['EWJ','MCHI','FXI','INDA','EEMA','AAXJ']
     }
 
     plots = {}

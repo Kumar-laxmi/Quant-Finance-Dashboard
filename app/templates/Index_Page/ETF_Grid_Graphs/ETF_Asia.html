@@ -1,0 +1,23 @@
+<!-- Asia ETFs Grid Start -->
+
+<div class="row g-2">
+    {% for ticker, chart in plots.ASIA.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+            <small class="text-muted">
+                {% if ticker == "EWJ" %}EWJ  Japan{% endif %}
+                {% if ticker == "MCHI" %}MCHI  China{% endif %}
+                {% if ticker == "FXI" %}FXI  China Large-Cap{% endif %}
+                {% if ticker == "INDA" %}INDA  India{% endif %}
+                {% if ticker == "EEMA" %}EEMA  Emerging Asia{% endif %}
+                {% if ticker == "AAXJ" %}AAXJ  Asia ex-Japan{% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Asia ETFs Grid End -->

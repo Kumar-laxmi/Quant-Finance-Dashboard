@@ -1,0 +1,23 @@
+<!-- Europe ETFs Grid Start -->
+
+<div class="row g-2">
+    {% for ticker, chart in plots.EUROPE.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+            <small class="text-muted">
+                {% if ticker == "FEZ" %}FEZ  Euro Stoxx 50{% endif %}
+                {% if ticker == "IEUR" %}IEUR  MSCI Europe{% endif %}
+                {% if ticker == "EWG" %}EWG  Germany{% endif %}
+                {% if ticker == "EWQ" %}EWQ  France{% endif %}
+                {% if ticker == "EWU" %}EWU  United Kingdom{% endif %}
+                {% if ticker == "EWL" %}EWL  Switzerland{% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Europe ETFs Grid End -->

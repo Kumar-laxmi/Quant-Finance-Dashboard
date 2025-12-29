@@ -1,16 +1,36 @@
 <div class="d-flex justify-content-center align-items-center mb-3">
     <!-- Left Arrow -->
-    <button class="btn btn-outline-light me-2" id="prev-region">
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide="prev"
+            id="prev-region">
         &lt;-
     </button>
 
     <!-- Region Buttons -->
-    <button class="btn btn-outline-light me-2 active" data-bs-target="#etfCarousel" data-bs-slide-to="0">US</button>
-    <button class="btn btn-outline-light me-2" data-bs-target="#etfCarousel" data-bs-slide-to="1">Europe</button>
-    <button class="btn btn-outline-light" data-bs-target="#etfCarousel" data-bs-slide-to="2">Asia</button>
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide-to="0">
+        US
+    </button>
+
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide-to="1">
+        Europe
+    </button>
+
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide-to="2">
+        Asia
+    </button>
 
     <!-- Right Arrow -->
-    <button class="btn btn-outline-light ms-2" id="next-region">
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide="next"
+            id="next-region">
         -&gt;
     </button>
 </div>
