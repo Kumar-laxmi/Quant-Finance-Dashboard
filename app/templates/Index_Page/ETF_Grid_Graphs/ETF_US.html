@@ -1,0 +1,21 @@
+<div class="row g-2">
+    {% for ticker, chart in plots.US.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+            <small class="text-muted">
+                {% if ticker == "SPY" %}SPY  S&P 500{% endif %}
+                {% if ticker == "QQQ" %}QQQ  Nasdaq 100{% endif %}
+                {% if ticker == "DIA" %}DIA  Dow Jones{% endif %}
+                {% if ticker == "IWM" %}IWM  Russell 2000{% endif %}
+                {% if ticker == "VTI" %}VTI  Total Market{% endif %}
+                {% if ticker == "VXX" %}VXX  Volatility{% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+<!-- US ETFs Grid End -->
+

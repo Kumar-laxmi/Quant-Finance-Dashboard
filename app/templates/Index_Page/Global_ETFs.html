@@ -1,0 +1,53 @@
+<div class="bg-secondary rounded p-3">
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="mb-0">Global ETFs</h6>
+
+        <!-- Carousel Controls -->
+        <div>
+            <button class="btn btn-sm btn-outline-light"
+                    data-bs-target="#etfCarousel"
+                    data-bs-slide="prev">
+                &#8592;
+            </button>
+            <button class="btn btn-sm btn-outline-light"
+                    data-bs-target="#etfCarousel"
+                    data-bs-slide="next">
+                &#8594;
+            </button>
+        </div>
+    </div>
+
+    <!-- Region Buttons -->
+    <div class="d-flex justify-content-center mb-3">
+        <button type="button" class="btn btn-outline-light me-2" data-bs-target="#etfCarousel" data-bs-slide-to="0">US</button>
+        <button type="button" class="btn btn-outline-light me-2" data-bs-target="#etfCarousel" data-bs-slide-to="1">Europe</button>
+        <button type="button" class="btn btn-outline-light" data-bs-target="#etfCarousel" data-bs-slide-to="2">Asia</button>
+    </div>
+
+    <!-- Carousel Start -->
+    <div id="etfCarousel" class="carousel slide" data-bs-interval="false">
+        <div class="carousel-inner">
+
+            <!-- US (DEFAULT ACTIVE) -->
+            <div class="carousel-item active">
+                {% include 'Index_Page/ETF_Grid_Graphs/ETF_US.html' %}
+            </div>
+
+            <!-- EUROPE -->
+            <div class="carousel-item">
+                {% include 'Index_Page/ETF_Grid_Graphs/ETF_Europe.html' %}
+            </div>
+
+            <!-- ASIA -->
+            <div class="carousel-item">
+                {% include 'Index_Page/ETF_Grid_Graphs/ETF_Asia.html' %}
+            </div>
+
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+</div>
+<!-- Global ETFs Section End -->
