@@ -1,0 +1,36 @@
+<script>
+    const carousel = document.getElementById('etfCarousel');
+    const carouselInstance = new bootstrap.Carousel(carousel, { interval: false });
+
+    const regionButtons = document.querySelectorAll('[data-bs-slide-to]');
+    let current = 0;
+
+    function updateActiveButton(index) {
+        regionButtons.forEach(btn => btn.classList.remove('active'));
+        regionButtons[index].classList.add('active');
+        current = index;
+    }
+
+    // Update active button when carousel slides
+    carousel.addEventListener('slid.bs.carousel', function (e) {
+        current = e.to;  // e.to is the new index
+        updateActiveButton(current);
+    });
+
+    // Left Arrow
+    document.getElementById('prev-region').addEventListener('click', () => {
+        const prev = (current - 1 + regionButtons.length) % regionButtons.length;
+        carouselInstance.to(prev);
+    });
+
+    // Right Arrow
+    document.getElementById('next-region').addEventListener('click', () => {
+        const next = (current + 1) % regionButtons.length;
+        carouselInstance.to(next);
+    });
+
+    // Update active button on direct button click
+    regionButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => updateActiveButton(index));
+    });
+</script>
