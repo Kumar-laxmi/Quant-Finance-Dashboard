@@ -12,9 +12,10 @@ def index(request):
     # Download ETF data
     data_etf = yf.download(
         # passes the ticker
-        tickers=['SPY', 'QQQ', 'DIA', 'IWM', 'VTI', 'VXX',              # <- US ETFs
-                'FEZ', 'IEUR', 'EWG', 'EWQ', 'EWU', 'EWL',              # <- European ETFs
-                'EWJ', 'MCHI', 'FXI', 'INDA', 'EEMA', 'AAXJ'],          # <- Asian ETFs
+        tickers=['SPY', 'QQQ', 'DIA', 'IWM', 'VTI', 'VXX',                                    # <- US ETFs
+                'FEZ', 'IEUR', 'EWG', 'EWQ', 'EWU', 'EWL',                                    # <- European ETFs
+                'EWJ', 'MCHI', 'FXI', 'INDA', 'EEMA', 'AAXJ',                                 # <- Asian ETFs
+                'BTC-USD', 'XRP-USD', 'USDT-USD', 'ETH-USD', 'BNB-USD', 'SOL-USD'],           # <- Crypto Currencies
         group_by = 'ticker',
         threads=True, # Set thread value to true
         # used for access data[ticker]
@@ -50,7 +51,8 @@ def index(request):
     ETF_REGIONS = {
         "US": ['SPY','QQQ','DIA','IWM','VTI','VXX'],
         "EUROPE": ['FEZ','IEUR','EWG','EWQ','EWU','EWL'],
-        "ASIA": ['EWJ','MCHI','FXI','INDA','EEMA','AAXJ']
+        "ASIA": ['EWJ','MCHI','FXI','INDA','EEMA','AAXJ'],
+        "CRYPTO": ['BTC-USD','XRP-USD','USDT-USD','ETH-USD','BNB-USD','SOL-USD']
     }
 
     plots = {}

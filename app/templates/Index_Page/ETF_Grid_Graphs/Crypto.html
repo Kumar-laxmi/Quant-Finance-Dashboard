@@ -1,0 +1,23 @@
+<!-- Crypto Grid Start -->
+
+<div class="row g-2">
+    {% for ticker, chart in plots.CRYPTO.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+            <small class="text-muted">
+                {% if ticker == "BTC-USD" %}Bitcoin (BTC){% endif %}
+                {% if ticker == "XRP-USD" %}Ripple (XRP){% endif %}
+                {% if ticker == "USDT-USD" %}Tether (USDT) Stablecoin{% endif %}
+                {% if ticker == "ETH-USD" %}Ethereum (ETH){% endif %}
+                {% if ticker == "BNB-USD" %}Binance Coin (BNB){% endif %}
+                {% if ticker == "SOL-USD" %}Solana (SOL){% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Crypto Grid End -->
