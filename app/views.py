@@ -15,7 +15,8 @@ def index(request):
         tickers=['SPY', 'QQQ', 'DIA', 'IWM', 'VTI', 'VXX',                                    # <- US ETFs
                 'FEZ', 'IEUR', 'EWG', 'EWQ', 'EWU', 'EWL',                                    # <- European ETFs
                 'EWJ', 'MCHI', 'FXI', 'INDA', 'EEMA', 'AAXJ',                                 # <- Asian ETFs
-                'BTC-USD', 'XRP-USD', 'USDT-USD', 'ETH-USD', 'BNB-USD', 'SOL-USD'],           # <- Crypto Currencies
+                'BTC-USD', 'XRP-USD', 'USDT-USD', 'ETH-USD', 'BNB-USD', 'SOL-USD',            # <- Crypto Currencies
+                'TLT', 'IEF', 'SHY', 'LQD', 'HYG', 'TIP'],                                    # <- Rates/Fixed Income ETFs
         group_by = 'ticker',
         threads=True, # Set thread value to true
         # used for access data[ticker]
@@ -52,7 +53,8 @@ def index(request):
         "US": ['SPY','QQQ','DIA','IWM','VTI','VXX'],
         "EUROPE": ['FEZ','IEUR','EWG','EWQ','EWU','EWL'],
         "ASIA": ['EWJ','MCHI','FXI','INDA','EEMA','AAXJ'],
-        "CRYPTO": ['BTC-USD','XRP-USD','USDT-USD','ETH-USD','BNB-USD','SOL-USD']
+        "CRYPTO": ['BTC-USD','XRP-USD','USDT-USD','ETH-USD','BNB-USD','SOL-USD'],
+        "RATES_FIXED_INCOME": ['TLT','IEF','SHY','LQD','HYG','TIP']
     }
 
     plots = {}

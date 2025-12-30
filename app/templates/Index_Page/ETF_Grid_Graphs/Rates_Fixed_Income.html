@@ -1,0 +1,25 @@
+<!-- US ETFs Grid Start -->
+
+<div class="row g-2">
+    {% for ticker, chart in plots.RATES_FIXED_INCOME.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+
+            <!-- FIXED INCOME ETF LABELS ONLY -->
+            <small class="text-muted">
+                {% if ticker == "TLT" %}TLT  20+ Year U.S. Treasury Bond ETF{% endif %}
+                {% if ticker == "IEF" %}IEF  7–10 Year U.S. Treasury Bond ETF{% endif %}
+                {% if ticker == "SHY" %}SHY  1–3 Year U.S. Treasury Bond ETF{% endif %}
+                {% if ticker == "LQD" %}LQD  Investment Grade Corporate Bond ETF{% endif %}
+                {% if ticker == "HYG" %}HYG  High Yield Corporate Bond ETF{% endif %}
+                {% if ticker == "TIP" %}TIP  Inflation-Protected Treasury (TIPS) ETF{% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- US ETFs Grid End -->

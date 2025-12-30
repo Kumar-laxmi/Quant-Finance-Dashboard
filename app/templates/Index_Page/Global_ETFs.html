@@ -32,6 +32,12 @@
         Crypto-Currency
     </button>
 
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide-to="4">
+        Rates/Fixed Income
+    </button>
+
     <!-- Right Arrow -->
     <button class="btn btn-outline-light me-2"
             data-bs-target="#etfCarousel"
@@ -55,6 +61,9 @@
         </div>
         <div class="carousel-item">
             {% include 'Index_Page/ETF_Grid_Graphs/Crypto.html' %}
+        </div>
+        <div class="carousel-item">
+            {% include 'Index_Page/ETF_Grid_Graphs/Rates_Fixed_Income.html' %}
         </div>
     </div>
 </div>
