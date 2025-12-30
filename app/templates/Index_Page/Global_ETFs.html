@@ -38,6 +38,18 @@
         Rates/Fixed Income
     </button>
 
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide-to="5">
+        Commodities
+    </button>
+
+    <button class="btn btn-outline-light me-2"
+            data-bs-target="#etfCarousel"
+            data-bs-slide-to="6">
+        Forex
+    </button>
+
     <!-- Right Arrow -->
     <button class="btn btn-outline-light me-2"
             data-bs-target="#etfCarousel"
@@ -64,6 +76,12 @@
         </div>
         <div class="carousel-item">
             {% include 'Index_Page/ETF_Grid_Graphs/Rates_Fixed_Income.html' %}
+        </div>
+        <div class="carousel-item">
+            {% include 'Index_Page/ETF_Grid_Graphs/Commodities.html' %}
+        </div>
+        <div class="carousel-item">
+            {% include 'Index_Page/ETF_Grid_Graphs/Forex.html' %}
         </div>
     </div>
 </div>

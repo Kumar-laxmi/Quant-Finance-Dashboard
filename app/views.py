@@ -16,7 +16,9 @@ def index(request):
                 'FEZ', 'IEUR', 'EWG', 'EWQ', 'EWU', 'EWL',                                    # <- European ETFs
                 'EWJ', 'MCHI', 'FXI', 'INDA', 'EEMA', 'AAXJ',                                 # <- Asian ETFs
                 'BTC-USD', 'XRP-USD', 'USDT-USD', 'ETH-USD', 'BNB-USD', 'SOL-USD',            # <- Crypto Currencies
-                'TLT', 'IEF', 'SHY', 'LQD', 'HYG', 'TIP'],                                    # <- Rates/Fixed Income ETFs
+                'TLT', 'IEF', 'SHY', 'LQD', 'HYG', 'TIP',                                     # <- Rates/Fixed Income ETFs
+                'USO', 'GLD', 'DBA', 'UNG', 'SLV', 'CORN',                                    # <- Commodity ETFs               
+                'EURUSD=X', 'JPY=X', 'GBP=X', 'AUD=X', 'CAD=X', 'MXN=X'],                     # <- Forex ETFs
         group_by = 'ticker',
         threads=True, # Set thread value to true
         # used for access data[ticker]
@@ -54,7 +56,9 @@ def index(request):
         "EUROPE": ['FEZ','IEUR','EWG','EWQ','EWU','EWL'],
         "ASIA": ['EWJ','MCHI','FXI','INDA','EEMA','AAXJ'],
         "CRYPTO": ['BTC-USD','XRP-USD','USDT-USD','ETH-USD','BNB-USD','SOL-USD'],
-        "RATES_FIXED_INCOME": ['TLT','IEF','SHY','LQD','HYG','TIP']
+        "RATES_FIXED_INCOME": ['TLT','IEF','SHY','LQD','HYG','TIP'],
+        "COMMODITIES": ['USO','GLD','DBA','UNG','SLV','CORN'],
+        "FOREX": ['EURUSD=X', 'JPY=X', 'GBP=X', 'AUD=X', 'CAD=X', 'MXN=X']
     }
 
     plots = {}

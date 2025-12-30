@@ -1,0 +1,25 @@
+<!-- Commodities ETFs Grid Start -->
+
+<div class="row g-2">
+    {% for ticker, chart in plots.COMMODITIES.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+
+            <!-- COMMODITY / ALTERNATIVE ETF LABELS ONLY -->
+            <small class="text-muted">
+                {% if ticker == "USO" %}USO  United States Oil Fund (Crude Oil ETF){% endif %}
+                {% if ticker == "GLD" %}GLD  SPDR Gold Trust (Physical Gold ETF){% endif %}
+                {% if ticker == "DBA" %}DBA  Invesco DB Agriculture Fund (Broad Agriculture ETF){% endif %}
+                {% if ticker == "UNG" %}UNG  United States Natural Gas Fund (Natural Gas ETF){% endif %}
+                {% if ticker == "SLV" %}SLV  iShares Silver Trust (Physical Silver ETF){% endif %}
+                {% if ticker == "CORN" %}CORN  Teucrium Corn Fund (Corn Futures ETF){% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Commodities ETFs Grid End -->

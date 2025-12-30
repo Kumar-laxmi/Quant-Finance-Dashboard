@@ -1,0 +1,25 @@
+<!-- Forex Grid Start -->
+
+<div class="row g-2">
+    {% for ticker, chart in plots.FOREX.items %}
+        <div class="col-md-4">
+            {% if chart %}
+                {% autoescape off %}{{ chart }}{% endautoescape %}
+            {% else %}
+                <div class="text-muted small text-center">No Data</div>
+            {% endif %}
+
+            <!-- FX PAIRS LABELS ONLY -->
+            <small class="text-muted">
+                {% if ticker == "EURUSD=X" %}EUR/USD  Euro vs US Dollar{% endif %}
+                {% if ticker == "JPY=X" %}USD/JPY  US Dollar vs Japanese Yen{% endif %}
+                {% if ticker == "GBP=X" %}GBP/USD  British Pound vs US Dollar{% endif %}
+                {% if ticker == "AUD=X" %}AUD/USD  Australian Dollar vs US Dollar{% endif %}
+                {% if ticker == "CAD=X" %}USD/CAD  US Dollar vs Canadian Dollar{% endif %}
+                {% if ticker == "MXN=X" %}USD/MXN  US Dollar vs Mexican Peso{% endif %}
+            </small>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Forex Grid End -->
